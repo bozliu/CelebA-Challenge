@@ -1,0 +1,543 @@
+DataParallel(
+  (module): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (stem): fc_block(
+      (fc): Linear(in_features=2048, out_features=512, bias=True)
+      (bn): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (dropout): Dropout(p=0.15, inplace=False)
+      (relu): ReLU(inplace=True)
+    )
+    (classifier00): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier01): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier02): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier03): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier04): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier05): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier06): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier07): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier08): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier09): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier10): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier11): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier12): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier13): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier14): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier15): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier16): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier17): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier18): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier19): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier20): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier21): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier22): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier23): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier24): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier25): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier26): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier27): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier28): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier29): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier30): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier31): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier32): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier33): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier34): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier35): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier36): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier37): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier38): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+    (classifier39): Sequential(
+      (0): fc_block(
+        (fc): Linear(in_features=512, out_features=256, bias=True)
+        (bn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.15, inplace=False)
+        (relu): ReLU(inplace=True)
+      )
+      (1): Linear(in_features=256, out_features=2, bias=True)
+    )
+  )
+)
