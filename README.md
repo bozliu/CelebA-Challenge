@@ -34,7 +34,7 @@ After downloading the dataset, please unzip img_align_celeba. Put the folder of 
 ├── Eval  
     └── list_eval_partition.txt
 
-├── img_align_celeba  [Face Pictures]
+├── img_align_celeba  [Face Pictures]    
 ├── test_attr_list.txt  
 ├── train_attr_list.txt  
 └── val_attr_list.txt  
