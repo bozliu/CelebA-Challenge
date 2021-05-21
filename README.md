@@ -57,11 +57,11 @@ After downloading the dataset, please unzip img_align_celeba. Put the folder of 
 `--gpu-id` refers to the GPU number on the cluster    
 
 ### Validation 
-`! python main.py -d './img_align_celeba' -e --gpu-id '0,1' `
+`! python main.py -d './img_align_celeba' -e --gpu-id '0,1' `   
 -e refers to the validation mode
 
 ### Test 
-`! python main.py -d './img_align_celeba' -t --gpu-id '0,1' `
+`! python main.py -d './img_align_celeba' -t --gpu-id '0,1' `   
 -t refers to the test mode
 
 
