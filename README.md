@@ -1,7 +1,7 @@
 # AI6126 Project 1: CelebA Facial Attribute Recognition Challenge
 40 face attributes prediction on [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) benchmark with PyTorch Implementation.   
 The challange is to deal with domain gap and imbalanced data of the dataset.    
-Three effective ways are summarized in my [blog article](https://bozliu.medium.com/three-effective-ways-to-deal-with-domain-gap-and-imbalanced-data-in-multi-class-classification-1949067ac374).    
+Three effective ways are summarized in my [blog article](https://towardsdatascience.com/three-effective-ways-to-deal-with-domain-gap-and-imbalanced-data-in-multi-class-classification-5f6c55a19f60).    
 
 ## Baseline 
 
